@@ -4,5 +4,50 @@
     <script type="module" src="script.js"></script>
   </head>
   <body>
+    <h1>Shard Bookmarks</h1>
+
+    <div class="user-dropdown">
+      <!-- drop down to select user -->
+      <label for="userSelect">Select user: </label>
+      <select id="userSelect">
+        <!-- options will populate using js -->
+      </select>
+    </div>
+
+    <div class="bookmark-form">
+      <h3>Add new Bookmark:</h3>
+      <form id="bookmarkform">
+        <label for="url">URL: </label>
+        <input type="url" id="url" required />
+
+        <label for="title">Title: </label>
+        <input type="text" id="title" maxLenght="40" required />
+
+
+        <label for="description">Description: </label>
+        <input type="text" id="description" />
+
+
+        <button type="submit">Add Bookmark</button>
+      </form>
+    </div>
+    <button id="clearBookmarksBtn">Clear All Bookmarks</button>
+    <!-- Section to display bookmarks -->
+    <div id="bookmarksSection">
+      <p id="bookmarkMessage" style="display: none">
+        No bookmarks available for this user.
+      </p>
+      <ul id="bookmarksList">
+        <!-- Bookmarks will be displayed here -->
+      </ul>
+    </div>
+    <div>
+      <footer class="footer">
+        <p>
+          Saqib Javed - London<br />
+          <!-- <a href="">link to repo</a> -->
+        </p>
+      </footer>
+    
   </body>
 </html>
