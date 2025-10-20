@@ -1,12 +1,34 @@
-// This is a placeholder file which shows how you can access functions defined in other files.
-// It can be loaded into index.html.
-// You can delete the contents of the file once you have understood how it works.
-// Note that when running locally, in order to open a web page which uses modules, you must serve the directory over HTTP e.g. with https://www.npmjs.com/package/http-server
-// You can't open the index.html file using a file:// URL.
 
 import { getUserIds } from "./storage.js";
 
-// window.onload = function () {
-//   const users = getUserIds();
-//   document.querySelector("body").innerText = `There are ${users.length} users`;
-// };
+const userSelect = document.getElementById("userSelect");
+
+
+
+window.onload = function () {
+  // const users = getUserIds();
+  dispalyUsers();
+};
+
+// render users on drop down list
+function dispalyUsers() {
+  const users = getUserIds();
+  // clear exisiting options
+  userSelect.innerHTML = "";
+
+  // no user is selected whenpage loads.
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Select user from the list";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  userSelect.appendChild(defaultOption);
+
+  // Displaying users in drop down.
+  users.forEach((id, index) => {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = `User - ${id}`;
+    userSelect.appendChild(option);
+  });
+}
