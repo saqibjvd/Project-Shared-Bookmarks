@@ -6,19 +6,37 @@ window.onload = function () {
   displayUsers();
   formHandler();
   
-
-
+  // change of user
   userSelect.addEventListener("change", () => {
     const selectedUser = userSelect.value;
     if (selectedUser) {
       displayBookmarks(selectedUser);
     }
   });
+
+  // clear all bookmarks eventlistener
+  const clearbutton = document.getElementById("clearBookmarksBtn")
+
+  clearbutton.addEventListener("click", () => {
+    const selectedUser = userSelect.value;
+
+    if(!selectedUser){
+      alert("Please select a user to clear bookmarks.");
+    return;
+    }
+    const confirmClear = confirm("Are you sure you want to clear all bookmarks for this user?");
+    if (!confirmClear) return;
+    
+    setData(selectedUser, []);
+    displayBookmarks(selectedUser)  
+  })
 };
 
 // render users on drop down list
+
 function displayUsers() {
   const users = getUserIds();
+
   // clear exisiting options
   userSelect.innerHTML = "";
 
