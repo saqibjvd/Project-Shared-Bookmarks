@@ -79,4 +79,18 @@ button:hover {
     background-color: #c9302c;
   }
   
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical; /* allows user to resize vertically */
+    font-family: inherit;
+    font-size: 1rem;
+    max-height: 200px;
+    min-height: 100px;
+
+  }
   

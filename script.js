@@ -1,4 +1,6 @@
 import { getUserIds, getData, setData } from "./storage.js";
+import { isDuplicate } from "./utils.js";
+
 
 const userSelect = document.getElementById("userSelect");
 
@@ -82,17 +84,22 @@ function formHandler() {
     const existingBookmarks = getData(selectedUser) || [];
     console.log("Existing bookmarks:", existingBookmarks);
 
-    const isDuplicate = existingBookmarks.some((bookmark) => {
-      return (
-        typeof bookmark.url === "string" &&
-        bookmark.url.toLowerCase() === url.toLowerCase()
-      );
-    });
-
-    if (isDuplicate) {
+    if(isDuplicate(existingBookmarks, url)) {
       alert("This bookmark already exists for the selected user.");
       return;
     }
+    
+    // const isDuplicate = existingBookmarks.some((bookmark) => {
+    //   return (
+    //     typeof bookmark.url === "string" &&
+    //     bookmark.url.toLowerCase() === url.toLowerCase()
+    //   );
+    // });
+
+    // if (isDuplicate) {
+    //   alert("This bookmark already exists for the selected user.");
+    //   return;
+    // }
 
     const newBookmark = {
       url,
