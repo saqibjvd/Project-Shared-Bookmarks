@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <script type="module" src="script.js"></script>
@@ -20,15 +19,22 @@
       <h3>Add new Bookmark:</h3>
       <form id="bookmarkform">
         <label for="url">URL: </label>
-        <input type="url" id="url" required />
+        <input type="url" id="url" placeholder="enter website link..." required />
 
         <label for="title">Title: </label>
-        <input type="text" id="title" maxlength="40" required />
+        <input
+          type="text"
+          id="title"
+          maxlength="40"
+          placeholder="enter title..."
+          required
+        />
 
-
-        <label for="description">Description: </label>
-        <input type="text" id="description" />
-
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          placeholder="short description..."
+        ></textarea>
 
         <button type="submit">Add Bookmark</button>
       </form>
@@ -44,7 +50,6 @@
       </ul>
     </div>
     <div>
-
       <footer class="footer">
         <p>
           Saqib Javed - London<br />
@@ -52,6 +57,5 @@
         </p>
       </footer>
     </div>
-
   </body>
 </html>
