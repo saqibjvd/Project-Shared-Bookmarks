@@ -1,5 +1,5 @@
 import { getUserIds, getData, setData } from "./storage.js";
-import { isDuplicate } from "./utils.js";
+import { isDuplicate } from "./utils.js"; // importing isDuplicate function from utils.js
 
 
 const userSelect = document.getElementById("userSelect");
@@ -39,7 +39,7 @@ window.onload = function () {
 function displayUsers() {
   const users = getUserIds();
 
-  // clear exisiting options
+  
   userSelect.innerHTML = "";
 
   // no user is selected when page loads.
@@ -89,18 +89,6 @@ function formHandler() {
       return;
     }
     
-    // const isDuplicate = existingBookmarks.some((bookmark) => {
-    //   return (
-    //     typeof bookmark.url === "string" &&
-    //     bookmark.url.toLowerCase() === url.toLowerCase()
-    //   );
-    // });
-
-    // if (isDuplicate) {
-    //   alert("This bookmark already exists for the selected user.");
-    //   return;
-    // }
-
     const newBookmark = {
       url,
       title,
